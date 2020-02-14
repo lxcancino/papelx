@@ -4,14 +4,10 @@
     width="75"
     src="https://nx.dev/assets/images/nx-logo-white.svg"
   />
-  <h1>Welcome to {{ title }}!</h1>
+  <h1>Biencenido a {{ title }}!</h1>
 </header>
 <main>
-  <h2>Cuentas por cobrar</h2>
-  <button mat-raised-button>Material Button</button>
-  <button mat-raised-button color="accent">Task 2</button>
-  <button mat-raised-button color="primary">Task 3</button>
-  <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+  <a mat-raised-button [routerLink]="['/clientes']">Clientes</a>
 </main>
 
 <router-outlet></router-outlet>

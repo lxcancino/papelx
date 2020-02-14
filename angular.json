@@ -5,7 +5,9 @@
       "projectType": "application",
       "schematics": {
         "@nrwl/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "changeDetection": "OnPush",
+          "skipTests": true
         }
       },
       "root": "apps/cxc",
@@ -21,10 +23,7 @@
             "polyfills": "apps/cxc/src/polyfills.ts",
             "tsConfig": "apps/cxc/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/cxc/src/favicon.ico",
-              "apps/cxc/src/assets"
-            ],
+            "assets": ["apps/cxc/src/favicon.ico", "apps/cxc/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "apps/cxc/src/styles.scss"
@@ -86,10 +85,7 @@
               "apps/cxc/tsconfig.app.json",
               "apps/cxc/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/cxc/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/cxc/**"]
           }
         },
         "test": {
@@ -123,13 +119,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/cxc-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/cxc-e2e/**"
-            ]
+            "tsConfig": ["apps/cxc-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/cxc-e2e/**"]
           }
         }
       }
@@ -145,6 +136,11 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "skipTests": true
     }
   },
   "defaultProject": "cxc"
