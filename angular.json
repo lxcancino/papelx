@@ -93,7 +93,8 @@
           "options": {
             "jestConfig": "apps/cxc/jest.config.js",
             "tsConfig": "apps/cxc/tsconfig.spec.json",
-            "setupFile": "apps/cxc/src/test-setup.ts"
+            "setupFile": "apps/cxc/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
