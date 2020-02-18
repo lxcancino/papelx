@@ -3,35 +3,17 @@ a {
   color: white;
 }
 
-a:hover,
-a.active {
+a:hover {
   color: lightgray;
 }
 
-.main-menu {
-  flex: 1;
-  display: flex;
-  ul {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    a {
-      margin-right: 15px;
-    }
-  }
+.menu-toogle {
+  border: 1px solids red;
 }
-
-.navigation-items {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-mat-toolbar {
-  border-radius: 3px;
-}
-
-@media (max-width: 959px) {
-  mat-toolbar {
-    border-radius: 0px;
-  }
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }

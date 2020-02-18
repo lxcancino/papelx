@@ -1,15 +1,43 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenavToggle.emit()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div>
-    <a routerLink="/inicio">SIIPAPX CxC</a>
+  <div fxHide.gt-xs="true">
+    <button mat-icon-button (click)="sidenavToggle.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
-  <div class="main-menu">
-    <ul class="navigation-items">
-      <li *ngFor="let item of navigation">
-        <a [routerLink]="item.path">{{ item.label }}</a>
-      </li>
-    </ul>
+
+  <div fxLayoutAlign="center center" fxFlexOffset="10px">
+    <a [routerLink]="['']" routerLinkActive="link-active">SIIPAPX CxC</a>
+  </div>
+
+  <div
+    fxFlex
+    fxLayoutGap="20px"
+    fxLayoutAlign="start center"
+    fxFlexOffset="60px"
+  >
+    <a *ngFor="let item of navigation" [routerLink]="item.path">{{
+      item.label
+    }}</a>
+  </div>
+
+  <div>
+    <button mat-button [matMenuTriggerFor]="accountMenu">
+      <mat-icon>account_box</mat-icon>
+      <span>{{ user?.displayName }}</span>
+    </button>
+    <mat-menu #accountMenu="matMenu">
+      <button mat-menu-item>
+        <img [src]="user?.photoURL" alt="User Avatar" class="avatar" />
+        <span>{{ user?.email }}</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>notifications</mat-icon>
+        <span>Notificaciones</span>
+      </button>
+      <a mat-menu-item routerLink="/loginx">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Terminar sesión</span>
+      </a>
+    </mat-menu>
   </div>
 </mat-toolbar>

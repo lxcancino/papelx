@@ -24,10 +24,7 @@
             "tsConfig": "apps/cxc/tsconfig.app.json",
             "aot": true,
             "assets": ["apps/cxc/src/favicon.ico", "apps/cxc/src/assets"],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
-              "apps/cxc/src/styles.scss"
-            ],
+            "styles": ["apps/cxc/src/styles.scss"],
             "scripts": []
           },
           "configurations": {

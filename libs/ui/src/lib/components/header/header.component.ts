@@ -18,6 +18,11 @@ import { NavItem } from '@papelx/models';
 export class HeaderComponent implements OnInit {
   @Input() navigation: NavItem[] = [];
   @Output() sidenavToggle = new EventEmitter();
+  user: any = {
+    photoURL: 'https://i.pravatar.cc/300',
+    displayName: 'Usuado Pruebas',
+    email: 'fake@noserver.com'
+  };
 
   constructor() {}
 
