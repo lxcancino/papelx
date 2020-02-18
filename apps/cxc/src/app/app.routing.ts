@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MaingPageComponent } from './main-page/maing-page.component';
+import { MainPageModule } from './main-page/main-page.module';
 
 const routes: Routes = [
   {
@@ -19,7 +20,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabled' })],
+  imports: [
+    MainPageModule,
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
