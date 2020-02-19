@@ -9,6 +9,11 @@ const routes: Routes = [
     component: MaingPageComponent,
     children: [
       {
+        path: 'credito',
+        loadChildren: () =>
+          import('./features/credito/credito.module').then(m => m.CreditoModule)
+      },
+      {
         path: 'clientes',
         loadChildren: () =>
           import('./clientes-page/clientes-page.module').then(

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { NavItem } from '@papelx/models';
+
+import { AppFacade } from '../+state/app.facade';
 
 @Component({
   selector: 'papelx-maing-page',
@@ -10,26 +11,6 @@ import { NavItem } from '@papelx/models';
   styleUrls: ['./maing-page.component.scss']
 })
 export class MaingPageComponent {
-  navigation: NavItem[] = [
-    {
-      path: 'credito',
-      name: 'credito',
-      label: 'Crédito',
-      description: 'Cartéra de crédito'
-    },
-    {
-      path: 'contado',
-      name: 'contado',
-      label: 'Contado',
-      description: 'Cartéra de contado'
-    },
-    {
-      path: '/cheques',
-      name: 'cheques',
-      label: 'Cheques',
-      description: 'Cartéra de Cheques devueltos'
-    }
-  ];
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
@@ -37,5 +18,8 @@ export class MaingPageComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    readonly appFacade: AppFacade
+  ) {}
 }
