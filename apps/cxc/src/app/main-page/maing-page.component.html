@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <papelx-header
+    [navigation]="appFacade.navigation$ | async"
+    (sidenavToggle)="drawer.toggle()"
+    [title]="(appFacade.appInfo$ | async).title"
+  ></papelx-header>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport="false"
+      fixedTopGap="56"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      mode="over"
+      opened="false"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="#">Link 1</a>
+        <a mat-list-item href="#" class="active">Link 2</a>
+        <a mat-list-item href="#">Link 3</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

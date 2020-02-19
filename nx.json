@@ -17,6 +17,21 @@
     "cxc-e2e": {
       "tags": [],
       "implicitDependencies": ["cxc"]
+    },
+    "utils": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "xcore": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "auth": {
+      "tags": []
     }
   }
 }

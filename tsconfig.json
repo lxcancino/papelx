@@ -15,7 +15,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@papelx/utils": ["libs/utils/src/index.ts"],
+      "@papelx/models": ["libs/models/src/index.ts"],
+      "@papelx/xcore": ["libs/xcore/src/index.ts"],
+      "@papelx/ui": ["libs/ui/src/index.ts"],
+      "@papelx/auth": ["libs/auth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

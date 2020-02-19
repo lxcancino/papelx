@@ -1,0 +1,20 @@
+<mat-drawer-container class="content">
+  <mat-drawer mode="side" opened #drawer>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let link of navigation">
+        <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+        <a matLine [routerLink]="link.path" *ngIf="!link.collapsible">{{
+          link.label
+        }}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div fxLayout="column">
+      <button mat-button (click)="drawer.toggle()">Cerrar</button>
+      <div fxFlex>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
