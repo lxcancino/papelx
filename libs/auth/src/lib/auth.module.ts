@@ -1,11 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+
+import { throwIfAlreadyLoaded } from '@papelx/utils';
 import { CommonModule } from '@angular/common';
+
 import { StoreModule } from '@ngrx/store';
-import * as fromAuth from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './store/auth.effects';
+import { reducers, AUTH_FEATURE_KEY } from './+store';
 
 @NgModule({
-  imports: [CommonModule, StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducer), EffectsModule.forFeature([AuthEffects])]
+  imports: [
+    CommonModule,
+    StoreModule.forFeature(AUTH_FEATURE_KEY, reducers),
+    EffectsModule.forFeature([])
+  ]
 })
-export class AuthModule {}
+export class AuthModule {
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: AuthModule
+  ) {
+    throwIfAlreadyLoaded(parentModule, 'AuthModule');
+  }
+}

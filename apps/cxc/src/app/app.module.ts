@@ -4,11 +4,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app.routing';
-
 import { CoreModule } from './core/core.moduel';
+import { AppStateModule } from './+state/app.state.module';
+import { AuthModule } from '@papelx/auth';
 
 import { environment } from '../environments/environment';
-import { AppStateModule } from './+state/app.state.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +16,10 @@ import { AppStateModule } from './+state/app.state.module';
     BrowserAnimationsModule,
     CoreModule,
     AppRoutingModule,
-    AppStateModule
+    AppStateModule,
+    AuthModule
   ],
-  providers: [],
+  providers: [{ provide: 'API_URL', useValue: environment.apiUrl }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
