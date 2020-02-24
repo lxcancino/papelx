@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
     CoreModule,
     AppRoutingModule,
     AppStateModule,
-    AuthModule
+    AuthModule.forRoot({})
   ],
   providers: [{ provide: 'API_URL', useValue: environment.apiUrl }],
   bootstrap: [AppComponent]

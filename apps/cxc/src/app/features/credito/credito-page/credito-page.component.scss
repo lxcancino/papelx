@@ -4,9 +4,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  border: 3px solid lightgreen;
+  border: 1px solid lightgreen;
   mat-drawer {
     width: 275px;
-    background: lightblue;
+    // background: lightblue;
   }
+}
+
+.mat-expansion-panel-header {
+  height: 48px;
+}
+.mat-list-item-content {
+  height: 32px;
 }

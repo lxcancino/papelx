@@ -28,4 +28,10 @@ export class MaingPageComponent implements OnInit {
   ngOnInit() {
     this.authService.isLoggedIn();
   }
+
+  login() {
+    this.authService
+      .authrize({ username: 'admin3', password: 'admin3' })
+      .subscribe(res => console.log('Loggedin: ', res));
+  }
 }
