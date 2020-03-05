@@ -1,4 +1,54 @@
-<div class="wrapper">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [attr.role]="'navigation'"
+    fixedInViewport="true"
+    mode="'push'"
+    opened="true"
+  >
+    <mat-toolbar>
+      <a class="home-button" routerLink="/">
+        <img class="app-logo" src="assets/logo2.svg" />
+      </a>
+    </mat-toolbar>
+    <mat-nav-list class="navigation-list">
+      <a
+        class="navigation-item"
+        mat-list-item
+        routerLink="/credito"
+        routerLinkActive="active"
+      >
+        <mat-icon class="material-icons">create</mat-icon>
+        <span class="navigation-item-label">Crédito</span>
+      </a>
+      <mat-divider class="navigation-divider"></mat-divider>
+      <a
+        class="navigation-item"
+        mat-list-item
+        routerLink="/contado"
+        routerLinkActive="active"
+      >
+        <mat-icon class="material-icons">how_to_reg</mat-icon>
+        <span class="navigation-item-label">Contado</span>
+      </a>
+      <mat-divider class="navigation-divider"></mat-divider>
+      <a
+        class="navigation-item"
+        mat-list-item
+        routerLink="/cheque"
+        routerLinkActive="active"
+      >
+        <mat-icon class="material-icons">add_comment</mat-icon>
+        <span class="navigation-item-label">Cheques</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar class="sidenav-content-toolbar" color="primary"> </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <div class="wrapper">
   <papelx-header
     [navigation]="appFacade.navigation$ | async"
     (sidenavToggle)="drawer.toggle()"
@@ -26,4 +76,4 @@
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
+</div> -->
