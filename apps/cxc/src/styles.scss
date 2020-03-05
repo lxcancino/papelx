@@ -13,3 +13,7 @@ body {
   // background-color: mat-color($accent);
   color: mat-color($accent);
 }
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}

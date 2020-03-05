@@ -8,6 +8,19 @@
         }}</a>
       </mat-list-item>
     </mat-nav-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Catálogos</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item>
+          <mat-icon matListIcon>people</mat-icon>
+          <a matLine [routerLink]="['clientes']" routerLinkActive="link-active">
+            Clientes
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-expansion-panel>
   </mat-drawer>
   <mat-drawer-content>
     <div fxLayout="column">

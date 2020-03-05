@@ -6,6 +6,7 @@ import { UIModule } from '@papelx/ui';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 export const routes: Routes = [
   {
@@ -22,7 +23,8 @@ export const routes: Routes = [
     UIModule,
     RouterModule.forChild(routes),
     MatSidenavModule,
-    MatGridListModule
+    MatGridListModule,
+    MatExpansionModule
   ],
   declarations: [CreditoPageComponent]
 })
