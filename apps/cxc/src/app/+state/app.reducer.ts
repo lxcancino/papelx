@@ -15,18 +15,18 @@ export interface ApplicationPartialState {
 }
 
 export const initialState: ApplicationState = {
-  title: 'CxC',
-  description: 'Sistema de Cuentas por Cobrar',
+  title: 'SIIPAPX CxC',
+  description: 'Módulo de Cuentas por Cobrar de SIIPAPX',
   loading: false,
   mainNavigation: [
     {
-      path: 'credito',
+      path: '/credito',
       name: 'credito',
       label: 'Crédito',
       description: 'Cartéra de crédito'
     },
     {
-      path: 'contado',
+      path: '/contado',
       name: 'contado',
       label: 'Contado',
       description: 'Cartéra de contado'

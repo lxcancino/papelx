@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 import { AppFacade } from '../+state/app.facade';
 import { AuthService } from '@papelx/auth';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'papelx-maing-page',
@@ -18,6 +19,8 @@ export class MaingPageComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
+  @ViewChild('drawer', { static: false })
+  drawer: MatSidenav;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -25,9 +28,7 @@ export class MaingPageComponent implements OnInit {
     readonly authService: AuthService
   ) {}
 
-  ngOnInit() {
-    this.authService.isLoggedIn();
-  }
+  ngOnInit() {}
 
   login() {
     this.authService

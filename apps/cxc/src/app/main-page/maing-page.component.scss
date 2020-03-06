@@ -1,10 +1,115 @@
-.sidenav-container .sidenav .home-button {
-  width: 100%;
-  padding-top: 60px;
-  margin-bottom: 30px;
-  display: inline-block;
-}
 /*
+.sidenav-container {
+  // border: 3px solid green;
+  height: 100%;
+  .sidenav {
+    // border: 3px solid brown;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    .header {
+      width: 100%;
+      //padding-top: 60px;
+      // margin-bottom: 30px;
+      display: inline-block;
+    }
+    .mat-toolbar {
+      // background: inherit;
+      border: 3px solid brown;
+      height: 40px;
+      font-size: 16px;
+    }
+    .navigation-list {
+      padding-top: 30px;
+      .navigation-item {
+        .active {
+          background-color: #dcf0fb;
+          color: #062639;
+        }
+        .mat-icon {
+          margin-right: 5px;
+        }
+        .navigation-item-label {
+          padding-top: 2px;
+        }
+      }
+      .navigation-divider {
+        color: #dcf0fb;
+        border-color: #dcf0fb;
+      }
+    }
+  }
+
+  .sidenav-content {
+    .sidenav-content-toolbar {
+      background: #062639;
+      color: #fff;
+      padding-left: 60px;
+      .menu-button {
+        color: #fff;
+        background-color: #062639;
+      }
+      .menu-button:focus {
+        outline: none;
+      }
+      .navbar-link {
+        color: #fff;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+      .navbar-link:hover {
+        color: #fff;
+      }
+      .navbar-link:focus {
+        outline: none;
+      }
+    }
+    .filler {
+      flex: 1 1 auto;
+    }
+  }
+
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+.gits a {
+  color: #fff;
+  display: inline-block;
+  padding-top: 7px;
+  padding-right: 20px;
+  position: relative;
+  .mat-badge-content {
+    background: #d3544d;
+  }
+}
+.gifts:focus {
+  outline: none;
+}
+mat-sidenav:not(.mat-drawer-opened) {
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+  width: 60px !important;
+  overflow: hidden;
+}
+mat-sidenav:not(.mat-drawer-opened) .navigation-item-label {
+  display: none !important;
+}
+mat-sidenav:not(.mat-drawer-opened) .header {
+  display: none !important;
+}
+.avatar {
+  vertical-align: middle;
+  width: 120px;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+*/
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -43,5 +148,3 @@
   top: 0;
   z-index: 1;
 }
-
-*/

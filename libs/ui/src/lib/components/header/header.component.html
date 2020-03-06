@@ -5,8 +5,13 @@
     </button>
   </div>
 
-  <div fxLayoutAlign="center center" fxFlexOffset="10px">
-    <a [routerLink]="['']" routerLinkActive="link-active">{{ title }}</a>
+  <div fxLayout fxLayoutAlign="center center" fxFlexOffset="10px">
+    <a class="title-link" [routerLink]="['']">
+      <!-- <img class="app-logo" src="assets/logo.svg" />
+      <span>{{ title }}</span> -->
+      <img class="app-logo" src="assets/logo2.svg" />
+      <span>{{ title }}</span>
+    </a>
   </div>
 
   <div
@@ -15,9 +20,14 @@
     fxLayoutAlign="start center"
     fxFlexOffset="60px"
   >
-    <a *ngFor="let item of navigation" [routerLink]="item.path">{{
-      item.label
-    }}</a>
+    <a
+      *ngFor="let item of navigation"
+      [routerLink]="item.path"
+      routerLinkActive="router-link-active"
+      class="link-item"
+      mat-button
+      >{{ item.label }}</a
+    >
   </div>
 
   <div>

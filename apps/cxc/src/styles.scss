@@ -9,9 +9,38 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.link-active {
-  // background-color: mat-color($accent);
-  color: mat-color($accent);
+.router-link-active {
+  background-color: mat-color($accent);
+  color: mat-color($accent, default-contrast);
+}
+mat-nav-list {
+  /*
+  [mat-list-item].active {
+    mat-icon[matListAvatar] {
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
+    }
+    mat-icon[matListIcon] {
+      color: mat-color($accent);
+    }
+    .mat-list-text {
+      color: gold;
+    }
+  }
+  */
+  mat-list-item.active {
+    * {
+      font-weight: bold;
+      color: mat-color($accent);
+    }
+    mat-icon[matListIcon] {
+      color: mat-color($accent);
+    }
+    mat-icon[matListAvatar] {
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
+    }
+  }
 }
 
 .mat-expansion-panel-body {

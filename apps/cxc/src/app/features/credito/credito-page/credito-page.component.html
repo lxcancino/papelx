@@ -1,11 +1,25 @@
-<mat-drawer-container class="content">
-  <mat-drawer mode="side" opened #drawer>
-    <mat-nav-list>
-      <mat-list-item *ngFor="let link of navigation">
-        <mat-icon matListIcon>{{ link.icon }}</mat-icon>
-        <a matLine [routerLink]="link.path" *ngIf="!link.collapsible">{{
-          link.label
-        }}</a>
+<mat-drawer-container
+  class="mat-drawer-container"
+  fxLayout="column"
+  fxLayoutAlign="center start"
+>
+  <mat-drawer
+    class="mat-drawer"
+    [mode]="getMode()"
+    [opened]="drawerOpenned && !(isHandset$ | async)"
+    #drawer
+  >
+    <mat-nav-list class="mat-nav-list">
+      <mat-list-item
+        class="nav-item"
+        *ngFor="let link of navigation"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [matTooltip]="link.description"
+      >
+        <mat-icon matListIcon>{{ link.icon || 'description' }}</mat-icon>
+        <h3 matLine>{{ link.label }}</h3>
       </mat-list-item>
     </mat-nav-list>
     <mat-expansion-panel>
@@ -13,18 +27,28 @@
         <mat-panel-title>Catálogos</mat-panel-title>
       </mat-expansion-panel-header>
       <mat-nav-list>
-        <mat-list-item>
-          <mat-icon matListIcon>people</mat-icon>
-          <a matLine [routerLink]="['clientes']" routerLinkActive="link-active">
-            Clientes
+        <mat-list-item *ngFor="let link of catalogos">
+          <mat-icon matListIcon>{{ link.icon || 'library_books' }}</mat-icon>
+          <a
+            matLine
+            [routerLink]="['clientes']"
+            routerLinkActive="router-link-active"
+          >
+            {{ link.label }}
           </a>
         </mat-list-item>
       </mat-nav-list>
     </mat-expansion-panel>
   </mat-drawer>
+
   <mat-drawer-content>
     <div fxLayout="column">
-      <button mat-button (click)="drawer.toggle()">Cerrar</button>
+      <div class="document-header" fxLayout fxLayoutAlign="start center">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Cartera de Crédito</span>
+      </div>
       <div fxFlex>
         <router-outlet></router-outlet>
       </div>

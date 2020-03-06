@@ -1,16 +1,17 @@
+<!--
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
     class="sidenav"
     [attr.role]="'navigation'"
     fixedInViewport="true"
-    mode="'push'"
+    fixedTopGap="64"
+    mode="'over'"
     opened="true"
   >
-    <mat-toolbar>
-      <a class="home-button" routerLink="/">
-        <img class="app-logo" src="assets/logo2.svg" />
-      </a>
+
+    <mat-toolbar class="header">
+      <span class="title">SIIPAPX CxC</span>
     </mat-toolbar>
     <mat-nav-list class="navigation-list">
       <a
@@ -45,10 +46,25 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
-    <mat-toolbar class="sidenav-content-toolbar" color="primary"> </mat-toolbar>
+    <mat-toolbar class="sidenav-content-toolbar" color="primary">
+      <button
+        mat-mat-icon-button
+        class="menu-button"
+        aria-label="Toggle sidenav"
+        (click)="drawer.toggle()"
+      >
+        <i class="material-icons">menu</i>
+      </button>
+      <span class="filler"></span>
+      <a mat-button routerLink="/credito" routerLinkActive="router-link-active">
+        Crédito
+      </a>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- <div class="wrapper">
+-->
+<div class="wrapper">
   <papelx-header
     [navigation]="appFacade.navigation$ | async"
     (sidenavToggle)="drawer.toggle()"
@@ -64,16 +80,12 @@
       mode="over"
       opened="false"
     >
-      <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item href="#">Link 1</a>
-        <a mat-list-item href="#" class="active">Link 2</a>
-        <a mat-list-item href="#">Link 3</a>
-      </mat-nav-list>
+      <mat-toolbar>
+        SideNav Toolbar
+      </mat-toolbar>
     </mat-sidenav>
     <mat-sidenav-content>
-      <button mat-button color="accent" (click)="login()">Login</button>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</div> -->
+</div>
