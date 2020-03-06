@@ -36,6 +36,12 @@ export const initialState: ApplicationState = {
       name: 'cheques',
       label: 'Cheques',
       description: 'Cartéra de Cheques devueltos'
+    },
+    {
+      path: '/catalogos',
+      name: 'catalogos',
+      label: 'Catálogos',
+      description: 'Mantenimiento a catálogos del Cuentas por cobrar'
     }
   ]
 };

@@ -1,0 +1,29 @@
+<mat-drawer-container class="mat-drawer-container">
+  <mat-drawer
+    class="mat-drawer"
+    [mode]="getMode()"
+    [opened]="drawerOpenned && !(isHandset$ | async)"
+    #drawer
+  >
+    <mat-toolbar>
+      Catalogos del sistema
+    </mat-toolbar>
+    <mat-nav-list class="mat-nav-list">
+      <mat-list-item
+        class="nav-item"
+        *ngFor="let link of navigation"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [matTooltip]="link.description"
+      >
+        <mat-icon matListIcon>{{ link.icon || 'description' }}</mat-icon>
+        <h3 matLine>{{ link.label }}</h3>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

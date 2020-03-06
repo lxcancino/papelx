@@ -24,6 +24,13 @@ const routes: Routes = [
           import('./clientes-page/clientes-page.module').then(
             m => m.ClientesPageModule
           )
+      },
+      {
+        path: 'catalogos',
+        loadChildren: () =>
+          import('./features/catalogos/catalogos.module').then(
+            m => m.CatalogosModule
+          )
       }
     ]
   }
